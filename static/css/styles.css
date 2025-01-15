@@ -250,6 +250,10 @@ footer .container {
         padding: 10px 0;
     }
 
+    a, p {
+    text-align: justify;
+    }
+
     nav ul li {
         margin: 10px 0;
     }
