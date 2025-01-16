@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const acceptButton = document.getElementById("acceptCookies");
     const rejectButton = document.getElementById("rejectCookies");
 
-    // Verifica se o usuário já aceitou ou rejeitou os cookies
+    // Verifica se o usuário aceitou os cookies
     const cookiesStatus = localStorage.getItem("cookiesStatus");
-    if (cookiesStatus === "accepted" || cookiesStatus === "rejected") {
-        cookieConsent.style.display = "none";
+    if (cookiesStatus === "accepted") {
+        cookieConsent.style.display = "none"; // Esconde o aviso se aceito
     }
 
     // Quando o usuário clica em "Aceitar"
@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Quando o usuário clica em "Rejeitar"
     rejectButton.addEventListener("click", () => {
-        localStorage.setItem("cookiesStatus", "rejected");
-        cookieConsent.style.display = "none";
-        alert("Você rejeitou os cookies. Algumas funcionalidades podem ser limitadas.");
+        cookieConsent.style.display = "none"; // Apenas esconde, sem salvar no localStorage
     });
 });
 
