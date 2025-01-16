@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     acceptButton.addEventListener("click", () => {
         localStorage.setItem("cookiesStatus", "accepted");
         cookieConsent.style.display = "none";
-        alert("Obrigado por aceitar os cookies!");
     });
 
     // Quando o usuário clica em "Rejeitar"
