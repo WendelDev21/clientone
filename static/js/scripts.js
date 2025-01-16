@@ -1,3 +1,29 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const cookieConsent = document.getElementById("cookieConsent");
+    const acceptButton = document.getElementById("acceptCookies");
+    const rejectButton = document.getElementById("rejectCookies");
+
+    // Verifica se o usuário já aceitou ou rejeitou os cookies
+    const cookiesStatus = localStorage.getItem("cookiesStatus");
+    if (cookiesStatus === "accepted" || cookiesStatus === "rejected") {
+        cookieConsent.style.display = "none";
+    }
+
+    // Quando o usuário clica em "Aceitar"
+    acceptButton.addEventListener("click", () => {
+        localStorage.setItem("cookiesStatus", "accepted");
+        cookieConsent.style.display = "none";
+        alert("Obrigado por aceitar os cookies!");
+    });
+
+    // Quando o usuário clica em "Rejeitar"
+    rejectButton.addEventListener("click", () => {
+        localStorage.setItem("cookiesStatus", "rejected");
+        cookieConsent.style.display = "none";
+        alert("Você rejeitou os cookies. Algumas funcionalidades podem ser limitadas.");
+    });
+});
+
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
