@@ -21,28 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
+const toggleMenu = document.querySelector('.toggle-menu');
+const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
+toggleMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
 });
-
-let currentSlide = 0;
-    
-        function moveSlide(direction) {
-            const images = document.querySelectorAll('.carousel-image');
-            const totalImages = images.length;
-            
-            currentSlide += direction;
-            if (currentSlide < 0) {
-                currentSlide = totalImages - 1;
-            } else if (currentSlide >= totalImages) {
-                currentSlide = 0;
-            }
-    
-            document.querySelector('.carousel-images').style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
 
 emailjs.init('gR6m-VYxpvUvz5iu4'); // Inicialize o EmailJS
 
